@@ -1,0 +1,21 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+    <h1>Author List</h1>
+
+    {% if author_list %}
+    <ul>
+
+      {% for author in author_list %}
+      <li>
+        <strong>Author:</strong>
+        <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no author in the library.</p>
+    {% endif %}
+{% endblock %}>
